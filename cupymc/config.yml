@@ -1,0 +1,201 @@
+Initialized_parameters:
+
+    # 1.1.10 extinguished intensity value for each photon
+    Imin: 0.001
+
+    # 1.1.11 space for simulation
+    xmax: 4
+    ymax: 4
+    # Thickness of the material (cm)
+    d: 4
+
+    # 1.1.13 threshold for absorption
+    th: 0.0000000001
+
+Probabilisty:
+    # range of alpha
+    nalfa: 18001
+    # range of beta
+    nbeta: 361
+    
+    cylinder:
+        nzeta: 361
+        ntheta: 361
+        # mahui oe
+        # resolution of angle is 1 degree
+
+photon:
+    # number of photons
+    number: 1000000
+    # position of photons (centre)
+    p: [0,0,0]
+    # direction of photons (centre)
+    d: [0,0,1]
+
+light_source:
+    # wavelength (um)
+    Lambda: [0.470, 0.550, 0.632,0.730,0.810]
+    # , 0.730, 0.810
+    # default intensity 
+    I : 1
+
+    # polarization
+    if_traverse: True
+    types: ['LHP','LVP','Lp45','Lm45','RCP','LCP'] 
+    type: ['LHP']
+    
+    # pattern: gaussian
+    
+    # pattern: laguerre_gaussian
+    # pattern: hermite_gaussian
+    # pattern: ince_gaussian
+    
+    # pattern: structured
+    
+    # pattern: gridx_structured
+    # pattern: gridinclined_structured
+    # pattern: sin_structured
+    # pattern: Lcosrandom_structured
+    # pattern: evenly
+    pattern: ideal
+
+    beam_radius: 1
+    # beam_radius: 2
+
+
+    # custom setting
+    if_customize: False
+    e0x : 0.707106781
+    e0y : 0.707106781
+    retardance : 90
+
+
+camera:
+    # resolution
+    resolution_x : 100
+    resolution_y : 100
+    Image_max : 1
+    Image_min : -1
+
+    Image00_max : -0.1
+    Image00_min : 0.1
+
+    #  fps?
+    #  noise
+
+scattering:
+    # type_list: ['sphere','sphere1','sphere2','sphere3','sphere4','sphere5','sphere6']
+    type_list: ['sphere']
+    sphere: 
+        # method: 'T_matrix'
+        method: 'traditional'
+        # index of refraction of the medium
+        # Nmed: 1
+        Nmed: 1.33
+        # index of refraction of the particle(lens)
+        # Npar: 1 
+        Npar: 1.59
+        # TODO: ivan says that maybe we will encounter complex index.
+        #  search for the solution
+        # particle radius (um)
+        r: 0.5
+        # r : 
+        # r: 2
+        # volume fraction of spheres in medium
+        # vf: 0.0006585
+        vf: 0.0005
+        # vf: 0.0003
+
+    sphere1: 
+        method: 'traditional'
+        # method: 'T-matrix'
+        # index of refraction of the medium: water
+        # typical index list:
+
+
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 0.75
+        # volume fraction of spheres in medium
+        vf: 0.0005
+    
+    sphere2: 
+        # method: 'T-matrix'
+        method: 'traditional'
+        # index of refraction of the medium
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 1
+        # volume fraction of spheres in medium
+        vf: 0.0005
+
+    sphere3: 
+        # method: 'T-matrix'
+        method: 'traditional'
+        # index of refraction of the medium
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 1.25
+        # volume fraction of spheres in medium
+        vf: 0.0005
+
+    sphere4: 
+        # method: 'T-matrix'
+        method: 'traditional'
+        # index of refraction of the medium
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 1.5
+        # volume fraction of spheres in medium
+        vf: 0.0005
+
+    sphere5: 
+        # method: 'T-matrix'
+        method: 'traditional'
+        # index of refraction of the medium
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 1.75
+        # volume fraction of spheres in medium
+        vf: 0.0005
+
+    sphere6: 
+        # method: 'T-matrix'
+        method: 'traditional'
+        # index of refraction of the medium
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 2
+        # volume fraction of spheres in medium
+        vf: 0.0005
+
+
+    cylinder:
+        method: 'traditional' 
+        # 'T-matrix'
+        # index of refraction of the medium
+        Nmed: 1.33
+        # index of refraction of the particle
+        Npar: 1.59
+        # 1particle radius (um)
+        r: 1
+        # volume fraction of spheres in medium
+        
+        # Ca from
+        # Light propagation in dentin: influence of microstructure on anisotropy
+        vf: 45
+
+        length: 100
+        main-axix-direction: [1,0,0]
